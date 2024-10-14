@@ -1,0 +1,13 @@
+.glavniNaslov {
+    display: block;
+    font-size: 50px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #aeecac7b;
+    border-radius: 8px;
+    font-family: 'Georgia', 'Times New Roman', serif; 
+    text-shadow: 2px 2px 4px #2E8B57;
+}
