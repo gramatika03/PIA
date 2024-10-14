@@ -1,0 +1,243 @@
+<div *ngIf="admin != null">
+    <app-log-out></app-log-out>
+</div>
+<div class="nijePrijavljen" *ngIf="admin == null">
+    {{notLoggedIn}}
+</div>
+
+<br>
+<br>
+<div class="ownerClass" *ngIf="admin != null">
+    <h2 class="vlasniciTitle">
+        <span class="text-border">Власници</span>
+    </h2>
+    <table>
+        <tr *ngFor="let owner of owners; let i = index" [class.deactivated]="!owner.activated"
+            [class.activated]="owner.activated">
+            <td><input type="text" [(ngModel)]="owner.firstname"></td>
+            <td><input type="text" [(ngModel)]="owner.lastname"></td>
+            <td><input type="text" [(ngModel)]="owner.password"></td>
+            <td>
+                <select [(ngModel)]="owner.gender">
+                    <option value="1">М</option>
+                    <option value="2">Ж</option>
+                </select>
+            </td>
+            <td><input type="text" [(ngModel)]="owner.phoneNumber"></td>
+            <td>
+                <div class="image-upload-wrapper">
+                    <label class="plus-button">
+                        <input type="file" accept="image/*" (change)="addedPhotoOwner($event, i)">
+                        +
+                    </label>
+                    <img src="{{owner.picture}}" alt="Profile Picture">
+                </div>
+            </td>
+            <td><input type="text" [(ngModel)]="owner.creditCardNumber"></td>
+            <td>
+                <button (click)="deactivateOwner(owner)" *ngIf="owner.activated">Деактивирај</button>
+                <button (click)="deactivateOwner(owner)" *ngIf="!owner.activated">Активирај</button>
+            </td>
+            <td><button (click)="saveChangesOwner(owner)">Сачувај промене</button></td>
+        </tr>
+    </table>
+    <div class="errorOwner" *ngIf="messageOwner">{{messageOwner}}</div>
+</div>
+
+<br>
+
+<div class="decoraterClass" *ngIf="admin != null">
+    <h2 class="dekorateriTitle">
+        <span class="text-border">Декоратери</span>
+    </h2>
+    <table>
+        <tr *ngFor="let decorater of decoraters; let i = index" [class.deactivated]="!decorater.activated"
+            [class.activated]="decorater.activated">
+            <td><input type="text" [(ngModel)]="decorater.firstname"></td>
+            <td><input type="text" [(ngModel)]="decorater.lastname"></td>
+            <td><input type="text" [(ngModel)]="decorater.password"></td>
+            <td>
+                <select [(ngModel)]="decorater.gender">
+                    <option value="1">М</option>
+                    <option value="2">Ж</option>
+                </select>
+            </td>
+            <td><input type="text" [(ngModel)]="decorater.phoneNumber"></td>
+            <td>
+                <div class="image-upload-wrapper">
+                    <label class="plus-button">
+                        <input type="file" accept="image/*" (change)="addedPhotoDecorater($event, i)">
+                        +
+                    </label>
+                    <img src="{{decorater.picture}}" alt="Profile Picture">
+                </div>
+            </td>
+            <td><input type="text" [(ngModel)]="decorater.creditCardNumber"></td>
+            <td>
+                <button (click)="deactivateDecorater(decorater)" *ngIf="decorater.activated">Деактивирај</button>
+                <button (click)="deactivateDecorater(decorater)" *ngIf="!decorater.activated">Активирај</button>
+                <button (click)="allowAppointments(decorater)" *ngIf="decorater.blocked">Одблокирај</button>
+            </td>
+            <td><button (click)="saveChangesDecorater(decorater)">Сачувај промене</button></td>
+        </tr>
+    </table>
+    {{messageDecorater}}
+</div>
+
+<br>
+
+<div class="tableFirm" *ngIf="admin != null">
+    <table>
+        <tr>
+            <th>Фирма</th>
+            <th>Адреса</th>
+            <th>Контакт</th>
+            <th>Почетак паузе</th>
+            <th>Крај паузе</th>
+        </tr>
+        <tr *ngFor="let firm of firms">
+            <td>{{ firm.name }}</td>
+            <td>{{ firm.address }}</td>
+            <td>{{ firm.contact }}</td>
+            <td>{{ firm.startPause | date: 'yyyy-MM-dd' }}</td>
+            <td>{{ firm.endPause | date: 'yyyy-MM-dd' }}</td>
+        </tr>
+    </table>
+</div>
+
+<br>
+
+<div class="requestClass" *ngIf="admin != null">
+    <h2 class="zahteviTitle">
+        <span class="text-border">Захтеви</span>
+    </h2>
+    <table>
+        <tr *ngFor="let request of requests">
+            <td>{{request.username}}</td>
+            <td>{{request.password}}</td>
+            <td>{{request.firstname}}</td>
+            <td>{{request.lastname}}</td>
+            <td>
+                <div *ngIf="request.gender == 1">М</div>
+                <div *ngIf="request.gender == 2">Ж</div>
+            </td>
+            <td>{{request.address}}</td>
+            <td>{{request.phoneNumber}}</td>
+            <td>{{request.email}}</td>
+            <td><img src="{{request.picture}}" alt="Profile Picture"></td>
+            <td>{{request.creditCardNumber}}</td>
+
+            <td><button (click)="acceptRequest(request)">Прихвати</button></td>
+            <td><button (click)="denyRequest(request)">Одбиј</button></td>
+        </tr>
+    </table>
+</div>
+
+<br>
+
+<div class="addDecorater" *ngIf="admin != null">
+    <h2 class="zahteviTitle">
+        <span class="text-border">Додај декоратера </span>
+    </h2>
+    <input type="text" placeholder="Корисничко име" [(ngModel)]="addDecorater.username"> <br />
+    <input type="text" placeholder="Лозинка" [(ngModel)]="addDecorater.password"> <br />
+    <input type="text" placeholder="Име" [(ngModel)]="addDecorater.firstname"> <br />
+    <input type="text" placeholder="Презиме" [(ngModel)]="addDecorater.lastname"> <br />
+
+    <label><input type="radio" name="gender" value=1 checked [(ngModel)]="addDecorater.gender"> М</label>
+    <label><input type="radio" name="gender" value=2 [(ngModel)]="addDecorater.gender"> Ж <br /></label>
+
+
+    <input type="text" placeholder="Адреса" [(ngModel)]="addDecorater.address"> <br />
+
+    <input type="text" placeholder="Контакт телефон" [(ngModel)]="addDecorater.phoneNumber"> <br />
+
+    <input type="text" placeholder="И-мејл адреса" [(ngModel)]="addDecorater.email"> <br />
+
+    <input type="file" placeholder="Профилна слика" accept="image/*" (change)="addedPhotoNewDec($event)"
+        [(ngModel)]="addDecorater.picture"> <br />
+
+    <table>
+        <tr>
+            <td>
+                <input type="text" placeholder="Број кредитне картице" [(ngModel)]="addDecorater.creditCardNumber"
+                    (input)="checkCardNew()">
+            </td>
+            <td>
+                <img src="assets/images/diners.jpg" width="25px" height="20px" *ngIf="cardIcon == 1">
+                <img src="assets/images/master.jpg" width="30px" height="20px" *ngIf="cardIcon == 2">
+                <img src="assets/images/visa.jpg" width="30px" height="20px" *ngIf="cardIcon == 3">
+            </td>
+        </tr>
+    </table>
+    <br />
+
+    <button (click)="addNewDecorater()">Додај</button>
+    {{messageAddingDecorater}}
+</div>
+
+<br>
+
+<div class="addFirm" *ngIf="admin != null">
+    <h2 class="zahteviTitle">
+        <span class="text-border">Додај фирму</span>
+    </h2>
+    <table>
+        <tr>
+            <td><input type="text" placeholder="Име" [(ngModel)]="addFirm.name"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Адреса" [(ngModel)]="addFirm.address"></td>
+        </tr>
+        <ng-container *ngFor="let service of services; let i = index">
+            <tr class="servisi">
+                <td>{{service}} - {{prices[i]}}</td>
+            </tr>
+        </ng-container>
+        <tr>
+            <td><input type="text" placeholder="Сервис" [(ngModel)]="newService"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Цена" [(ngModel)]="newPrice"></td>
+        </tr>
+        <tr>
+            <td><button (click)="addServicePrice()">Додај сервис</button></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Локација" [(ngModel)]="addFirm.location"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Контакт" [(ngModel)]="addFirm.contact"></td>
+        </tr>
+        <tr>
+            <td><input type="datetime-local" placeholder="Датум од" [(ngModel)]="addFirm.startPause"></td>
+        </tr>
+        <tr>
+            <td><input type="datetime-local" placeholder="Датум до" [(ngModel)]="addFirm.endPause"></td>
+        </tr>
+        <tr>
+            <td><button (click)="addNewFirm()">Додај</button></td>
+        </tr>
+        {{firmMessage}}
+    </table>
+</div>
+
+
+<br>
+
+<div class="jobClass" *ngIf="admin != null">
+    <table>
+        <tr>
+            <td>Корисничко име</td>
+            <td>Име фирме</td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Име" [(ngModel)]="usernameJob"></td>
+            <td><input type="text" placeholder="Име фирме" [(ngModel)]="firmNameJob"></td>
+        </tr>
+    </table>
+    <button (click)="addJob()">Додај радника</button>
+    {{jobMessage}}
+</div>
+
+<app-footer></app-footer>

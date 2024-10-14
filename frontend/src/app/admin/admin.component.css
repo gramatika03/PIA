@@ -1,0 +1,517 @@
+.vlasniciTitle {
+    color: #1a6c1d;
+    background-color: #e0f2e9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.ownerClass {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ownerClass table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.ownerClass tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.ownerClass td {
+    padding: 10px;
+}
+
+.ownerClass input[type="text"],
+.ownerClass select {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    background-color: #f9fdf9;
+}
+
+.ownerClass .plus-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.ownerClass .plus-button input[type="file"] {
+    display: none;
+}
+
+.ownerClass img {
+    max-width: 50px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #4CAF50;
+    margin-left: 10px;
+}
+
+.ownerClass .image-upload-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.ownerClass .deactivated {
+    background-color: #f8d7da;
+}
+
+.ownerClass .activated {
+    background-color: #d4edda;
+}
+
+.ownerClass button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.ownerClass button:hover {
+    background-color: #45a049;
+}
+
+.errorOwner {
+    color: #e74c3c;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.dekorateriTitle {
+    color: #1a6c1d;
+    background-color: #e0f2e9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.decoraterClass {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.decoraterClass table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.decoraterClass tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.decoraterClass td {
+    padding: 10px;
+}
+
+.decoraterClass input[type="text"],
+.decoraterClass select {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    background-color: #f9fdf9;
+}
+
+.decoraterClass .plus-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.decoraterClass .plus-button input[type="file"] {
+    display: none;
+}
+
+.decoraterClass img {
+    max-width: 50px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #4CAF50;
+    margin-left: 10px;
+}
+
+.decoraterClass .image-upload-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.decoraterClass .deactivated {
+    background-color: #f8d7da;
+}
+
+.decoraterClass .activated {
+    background-color: #d4edda;
+}
+
+.decoraterClass button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.decoraterClass button:hover {
+    background-color: #45a049;
+}
+
+.errorDecorater {
+    color: #e74c3c;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.tableFirm {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.tableFirm table {
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.tableFirm td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tableFirm th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.tableFirm tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tableFirm tr:nth-child(odd) {
+    background-color: #aeaeae;
+}
+
+.tableFirm tr:hover {
+    background-color: #ddd;
+}
+
+.zahteviTitle {
+    color: #1a6c1d;
+    background-color: #e0f2e9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.requestClass {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #e0f2e9;
+    margin: 20px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.requestClass table {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.requestClass tr {
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+
+.requestClass td {
+    padding: 12px;
+    text-align: left;
+}
+
+.requestClass td {
+    border-bottom: 1px solid #ddd;
+}
+
+.requestClass img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+}
+
+.requestClass button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.requestClass button.deny {
+    background-color: #f44336;
+}
+
+.requestClass tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.requestClass tr:hover {
+    background-color: #ddd;
+}
+
+.addDecorater {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+
+}
+
+.addDecorater input[type="text"], .addDecorater input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.addDecorater input[type="radio"] {
+    margin-right: 5px;
+}
+
+.addDecorater label {
+    margin-right: 10px;
+}
+
+.addDecorater table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.addDecorater td {
+    padding: 8px;
+    text-align: left;
+}
+
+.addDecorater img {
+    max-width: 100px;
+    max-height: 30px;
+}
+
+.addDecorater button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.addDecorater button:hover {
+    background-color: #45a049;
+}
+
+.addDecorater .messageAddingDecorater {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.addFirm {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+
+}
+
+.addFirm table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.addFirm td {
+    padding: 8px;
+    text-align: left;
+}
+
+.addFirm input[type="text"], .addFirm input[type="datetime-local"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.addFirm button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.addFirm button:hover {
+    background-color: #45a049;
+}
+
+.addFirm .firmMessage {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.jobClass {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+
+}
+
+.jobClass table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.jobClass td {
+    padding: 10px;
+    text-align: left;
+}
+
+.jobClass input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.jobClass button {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.jobClass button:hover {
+    background-color: #45a049;
+}
+
+.jobClass .jobMessage {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.nijePrijavljen {
+    background-color: red;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.servisi {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.servisi td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
