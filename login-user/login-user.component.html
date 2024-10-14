@@ -1,0 +1,26 @@
+<app-start></app-start>
+
+<div class = "tabelaPrijava">
+<table class = "tabela">
+    <tr>
+        <div class = "prijaviSe">Пријави се</div>
+    </tr>
+    <tr>
+        <td><input type = "text" [(ngModel)] = "username" placeholder = "Korisnicko ime"></td>
+    </tr>
+    <tr>
+        <td><input type = "password" [(ngModel)] = "password" placeholder = "Lozinka"></td>
+    </tr>
+    <tr>
+        <td class = "poruka">{{message}}</td>
+    </tr>
+    <tr>
+        <td><button class = "dugme" (click) = "logIn()">Prijavi se</button></td>
+    </tr>
+    <tr>
+        <td class = "posebnaPrijava"><a (click) = "register()">Региструј се</a></td>
+    </tr>
+</table>
+</div>
+
+<app-footer></app-footer>

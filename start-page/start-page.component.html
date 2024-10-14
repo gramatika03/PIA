@@ -1,0 +1,95 @@
+<button (click) = "prijava()" class = "dugme">Пријави се</button>
+<div class="mainText">
+    <table>
+        <tr>
+            <td>Укупан број декорисаних башта</td> 
+            <td>{{decoratedGardens}}</td>
+        </tr>
+        <tr>
+            <td>Укупан број регистрованих власника у систему</td> 
+            <td>{{ownersNumber}}</td>
+        </tr>
+        <tr>
+           <td>Укупан број регистрованих декоратера у систему</td>  
+           <td>{{decoratersNumber}}</td>
+        </tr>
+        <tr>
+            <td>Број заказаних послова у последњих 24 часа</td> 
+            <td>{{jobsLastDay}}</td>
+        </tr>
+        <tr>
+            <td>Број заказаних послова у последњих 7 дана</td> 
+            <td>{{jobsLastWeek}}</td>
+        </tr>
+        <tr>
+            <td>Број заказаних послова у последњих 30 дана</td>
+            <td>{{jobsLastMonth}}</td> 
+        </tr>    
+    </table>
+</div>
+
+<div class="firme">
+    <table>
+        <tr>
+            <th>Назив фирме</th>
+            <th>Адреса</th>
+            <th>Радници</th>
+        </tr>
+        <tr *ngFor="let firm of firms">
+            <td>{{firm.name}}</td>
+            <td>{{firm.address}}</td>
+            <td>
+                <span *ngFor="let decorater of workers[firm.name.toString()]">
+                    {{decorater.firstname}} {{decorater.lastname}}
+
+                </span>
+            </td>
+        </tr>
+    </table>
+
+    <select [(ngModel)]="selectedSort">
+        <option value="1">Нерастуће &#8595;</option>
+        <option value="2">Неопадајуће &#8593;</option>
+    </select>
+
+    <select [(ngModel)]="selectedType">
+        <option value="1">Назив</option>
+        <option value="2">Адреса</option>
+    </select>
+
+    <button (click)="sort()">Сортирај</button><br />
+</div>
+
+
+<div class="pretraga">
+    <input type="text" placeholder="Име фирме" [(ngModel)]="searchName">
+    <input type="text" placeholder="Адреса фирме" [(ngModel)]="searchAddress">
+
+    <button (click)="search()">Претражи</button>
+
+    <table>
+        <tr>
+            <td>Назив</td>
+            <td>Адреса</td>
+        </tr>
+        <tr *ngFor="let pos of searchedFirms">
+            <td>{{firms[pos.valueOf()].name}}</td>
+            <td>{{firms[pos.valueOf()].address}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="galerija">
+    <div class="galerijaNaslov">
+        <h2>Завршени послови</h2>
+    </div>
+    <table>
+        <tr *ngFor="let part of gallery">
+            <td *ngFor="let photo of part.pictures">
+                <img src="{{ photo }}" alt="Photo">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<app-footer></app-footer>

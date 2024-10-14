@@ -1,0 +1,53 @@
+<app-log-out></app-log-out>
+
+<div class="meni">
+    <ul class="menu-list">
+        <li><a (click)="chosen(0)">Профил</a></li>
+        <li><a (click)="chosen(1)">Фирме</a></li>
+        <li><a (click)="chosen(2)">Заказивања</a></li>
+        <li><a (click)="chosen(3)">Одржавање</a></li>
+    </ul>
+</div>
+
+<div class="zavrseni">
+    <table>
+        <thead>
+            <tr>
+                <th>Датум завршетка</th>
+                <th>Број фонтана</th>
+                <th>Број базена</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let finishedJob of finishedJobs; let i = index">
+                <td>{{finishedJob.endDate | date:'dd/MM/yyyy'}}</td>
+                <td>{{finishedJob.fountainNumber}}</td>
+                <td>{{finishedJob.poolNumber}}</td>
+                <td *ngIf="today >= sixthMonth[i]">
+                    <button (click)="makeMaintenence(i)" class="button">Закажи одржавање</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<br/>
+<div class="odrzavanja">
+    <table>
+        <thead>
+            <tr>
+                <th>Корисничко име</th>
+                <th>Фирма</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let maintenence of maintenences">
+                <td>{{maintenence.username}}</td>
+                <td>{{maintenence.firm}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-footer></app-footer>

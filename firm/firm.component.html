@@ -1,0 +1,153 @@
+<app-log-out></app-log-out>
+
+<div class="meni">
+    <ul class="menu-list">
+        <li><a (click)="chosenMenu(0)">Профил</a></li>
+        <li><a (click)="chosenMenu(1)">Фирме</a></li>
+        <li><a (click)="chosenMenu(2)">Заказивања</a></li>
+        <li><a (click)="chosenMenu(3)">Одржавање</a></li>
+    </ul>
+</div>
+
+<div class="firma">
+    <table>
+        <thead>
+            <tr>
+                <th>Фирма</th>
+                <th>Адреса</th>
+                <th>Контакт</th>
+                <th>Сервиси и цене</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{firm.name}}</td>
+                <td>{{firm.address}}</td>
+                <td>{{firm.contact}}</td>
+                <td>
+                    <div class="services-prices">
+                        <div *ngFor="let service of services; let i = index" class="service-price">
+                            {{service}} - {{prices[i]}}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class = "mapa">
+        <iframe
+            [src]="safeUrl"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+
+
+<div class="dodajZakazivanje">
+    <div class="form-group">
+        <label for="startDate">Почетак:</label>
+        <input type="datetime-local" id="startDate" [(ngModel)]="startDate">
+    </div>
+
+    <div class="form-group">
+        <label for="squareFootage">Површина:</label>
+        <input type="number" id="squareFootage" [(ngModel)]="squareFootage">
+    </div>
+
+    <div class="form-group">
+        <label>Тип баште:</label>
+        <div>
+            <input type="radio" id="privateGarden" [(ngModel)]="privatePublicGarden" value="1" name="gardenChoice">
+            <label for="privateGarden">Приватна башта</label>
+        </div>
+        <div>
+            <input type="radio" id="publicGarden" [(ngModel)]="privatePublicGarden" value="2" name="gardenChoice">
+            <label for="publicGarden">Јавна башта</label>
+        </div>
+    </div>
+
+    <div *ngIf="privatePublicGarden == 1" class="additional-info">
+        <div class="form-group">
+            <label for="poolFootage">Површина базена:</label>
+            <input type="number" id="poolFootage" [(ngModel)]="poolFootage">
+        </div>
+        <div class="form-group">
+            <label for="greenFootage">Површина зеленила:</label>
+            <input type="number" id="greenFootage" [(ngModel)]="greenFootage">
+        </div>
+        <div class="form-group">
+            <label for="sittingFootage">Површина за седење:</label>
+            <input type="number" id="sittingFootage" [(ngModel)]="sittingFootage">
+        </div>
+    </div>
+
+    <div *ngIf="privatePublicGarden == 2" class="additional-info">
+        <div class="form-group">
+            <label for="fountainFootage">Површина фонтане:</label>
+            <input type="number" id="fountainFootage" [(ngModel)]="fountainFootage">
+        </div>
+        <div class="form-group">
+            <label for="greenFootage">Површина зеленила:</label>
+            <input type="number" id="greenFootage" [(ngModel)]="greenFootage">
+        </div>
+        <div class="form-group">
+            <label for="sittingNumber">Број места за седење:</label>
+            <input type="number" id="sittingNumber" [(ngModel)]="sittingNumber">
+        </div>
+    </div>
+
+    <div *ngIf="privatePublicGarden == 1 || privatePublicGarden == 2" class="form-group">
+        <label for="description">Опис:</label>
+        <textarea id="description" rows="4" cols="50" [(ngModel)]="description"></textarea>
+        <table>
+            <tr *ngFor = "let service of services; let i = index">
+                <label><input type = "checkbox"  (click) = "chosen(i)">{{service}} - {{prices[i]}}</label>
+            </tr>
+        </table>
+    </div>
+
+    <div *ngIf="privatePublicGarden == 1 || privatePublicGarden == 2" class="form-group">
+        <button (click)="makeAppointment()" class="button">Додај</button>
+    </div>
+
+    <div class="message">
+        {{message}}
+    </div>
+</div>
+
+
+<div class="garden-container">
+    <canvas #gardenCanvas class="garden-canvas" width="575" height="375" (click)="onCanvasClick($event)"></canvas>
+    <div class="drawing-options">
+        <label>
+            <input type="radio" name="drawingElement" [(ngModel)]="chosenElement" value="green">
+            Зеленило
+        </label>
+        <label>
+            <input type="radio" name="drawingElement" [(ngModel)]="chosenElement" value="pool">
+            Базен
+        </label>
+        <label>
+            <input type="radio" name="drawingElement" [(ngModel)]="chosenElement" value="fountain">
+            Фонтана
+        </label>
+        <label>
+            <input type="radio" name="drawingElement" [(ngModel)]="chosenElement" value="table">
+            Сто
+        </label>
+        <label>
+            <input type="radio" name="drawingElement" [(ngModel)]="chosenElement" value="chairs">
+            Столице/лежаљке
+        </label>
+        <label>
+            <input type="radio" name="drawingElement" [(ngModel)]="chosenElement" value="clear">
+            Обриши
+        </label>
+        <label>
+            <input type = "file" [(ngModel)] = "fajl" accept = ".json" (change)="onFileSelected($event)">
+        </label>
+    </div>
+</div>
+
+<app-footer></app-footer>

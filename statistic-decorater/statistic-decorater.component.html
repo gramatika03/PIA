@@ -1,0 +1,26 @@
+<app-log-out></app-log-out>
+
+<div class="meni">
+    <ul class="menu-list">
+        <li><a (click)="chosen(0)">Профил</a></li>
+        <li><a (click)="chosen(1)">Заказивања</a></li>
+        <li><a (click)="chosen(2)">Одржавања</a></li>
+        <li><a (click)="chosen(3)">Статистика</a></li>
+    </ul>
+</div>
+
+<br>
+
+<div class="canvas-container">
+    <canvas id="jobsPerMonth"></canvas>
+</div>
+
+<div class="canvas-container">
+    <canvas id="jobsPerDecorater"></canvas>
+</div>
+
+<div class="canvas-container">
+    <canvas id="jobsPerDay"></canvas>
+</div>
+
+<app-footer></app-footer>

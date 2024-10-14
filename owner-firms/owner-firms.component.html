@@ -1,0 +1,79 @@
+<app-log-out></app-log-out>
+
+<div class="meni">
+    <ul class="menu-list">
+        <li><a (click)="chosenMenu(0)">Профил</a></li>
+        <li><a (click)="chosenMenu(1)">Фирме</a></li>
+        <li><a (click)="chosenMenu(2)">Заказивања</a></li>
+        <li><a (click)="chosenMenu(3)">Одржавање</a></li>
+    </ul>
+</div>
+
+<div class="firme">
+    <table>
+        <thead>
+            <tr>
+                <th>Назив фирме</th>
+                <th>Адреса</th>
+                <th>Просечна оцена</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let firm of firms; let i = index">
+                <tr>
+                    <td>
+                        <div (click)="chosen(i)">{{firm.name}}</div>
+                    </td>
+                    <td>{{firm.address}}</td>
+                    <td>
+                        <ng-container *ngFor="let star of getStars(firmRatings[i])">
+                            <i *ngIf="star === 'full'" class="fas fa-star"></i>
+                            <i *ngIf="star === 'half'" class="fas fa-star-half-alt"></i>
+                            <i *ngIf="star === 'empty'" class="far fa-star"></i>
+                        </ng-container>
+                    </td>
+                </tr>
+                <ng-container *ngIf="chosenFirm[i]">
+                    <tr>
+                        <td colspan="3">
+                            <a (click)="goToFirm(i)" class="link">Link</a>
+                        </td>
+                    </tr>
+                </ng-container>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="pretraga">
+    <input type="text" placeholder="Име фирме" [(ngModel)]="searchName">
+    <input type="text" placeholder="Адреса фирме" [(ngModel)]="searchAddress">
+
+    <button (click)="search()">Претражи</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Назив</th>
+                <th>Адреса</th>
+                <th>Оцена</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pos of searchedFirms; let i = index">
+                <td>{{firms[pos.valueOf()].name}}</td>
+                <td>{{firms[pos.valueOf()].address}}</td>
+                <td>
+                    <ng-container *ngFor="let star of getStars(firmRatings[i])">
+                        <i *ngIf="star === 'full'" class="fas fa-star"></i>
+                        <i *ngIf="star === 'half'" class="fas fa-star-half-alt"></i>
+                        <i *ngIf="star === 'empty'" class="far fa-star"></i>
+                    </ng-container>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-footer></app-footer>
