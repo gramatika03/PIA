@@ -1,0 +1,54 @@
+<app-log-out></app-log-out>
+
+<div class="meni">
+    <ul class="menu-list">
+        <li><a (click)="chosen(0)">Профил</a></li>
+        <li><a (click)="chosen(1)">Заказивања</a></li>
+        <li><a (click)="chosen(2)">Одржавања</a></li>
+        <li><a (click)="chosen(3)">Статистика</a></li>
+    </ul>
+</div>
+
+<div class="dekorater">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="image-upload-wrapper">
+                        <label class="plus-button">
+                            <input type="file" accept="image/*" (change)="addedPhoto($event)">
+                            +
+                        </label>
+                        <img src="{{decorater.picture}}" alt="Profile Picture">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Име" [(ngModel)]="decorater.firstname"></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Презиме" [(ngModel)]="decorater.lastname"></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Адреса" [(ngModel)]="decorater.address"></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Е-маил" [(ngModel)]="decorater.email"></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Телефон" [(ngModel)]="decorater.phoneNumber"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button (click)="saveChanges()">Сачувај промене</button>
+                     <br>
+                     <br>
+                    <button (click)="changePassword()">Промени лозинку</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="messageDecorater">{{messageDecorater}}</div>
+</div>
+
+<app-footer></app-footer>

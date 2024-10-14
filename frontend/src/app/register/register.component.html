@@ -1,0 +1,53 @@
+<app-start></app-start>
+
+<div class="registracijaForma">
+
+    <div class = "naslov">Регистрација власника</div>
+
+    <input type="text" placeholder="Корисничко име" [(ngModel)]="username"> <br />
+    <input type="text" placeholder="Лозинка" [(ngModel)]="password"> <br />
+    <input type="text" placeholder="Име" [(ngModel)]="firstname"> <br />
+    <input type="text" placeholder="Презиме" [(ngModel)]="lastname"> <br />
+
+    <input type="radio" name="gender" value=1 checked [(ngModel)]="gender"> М
+    <input type="radio" name="gender" value=2 [(ngModel)]="gender"> Ж <br />
+
+
+    <input type="text" placeholder="Адреса" [(ngModel)]="address"> <br />
+
+    <input type="text" placeholder="Контакт телефон" [(ngModel)]="number"> <br />
+
+    <input type="text" placeholder="И-мејл адреса" [(ngModel)]="email"> <br />
+
+    <table>
+        <tr>
+            <td>
+                <input type="text" placeholder="Број кредитне картице" [(ngModel)]="creditCardNumber"
+                    (input)="checkCard()">
+            </td>
+            <td>
+                <img src="assets/images/diners.jpg" *ngIf="cardIcon == 1" class="dinersClass">
+                <img src="assets/images/master.jpg" *ngIf="cardIcon == 2" class="masterClass">
+                <img src="assets/images/visa.jpg" *ngIf="cardIcon == 3" class="visaClass">
+            </td>
+        </tr>
+    </table>
+
+    <div class="image-upload-container">
+        <label for="fileInput" class="custom-file-upload">
+            +
+        </label>
+        <input id="fileInput" class="slikaUlaz" type="file" accept="image/*" (change)="addedPhoto($event)">
+        <img [src]="image" *ngIf="image" class="uploaded-image">
+    </div>    
+    
+
+    <br />
+
+    {{message}}
+    {{messageCreated}}
+
+    <button (click)="register()">Региструј се</button>
+</div>
+
+<app-footer></app-footer>
