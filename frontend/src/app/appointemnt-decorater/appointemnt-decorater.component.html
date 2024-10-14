@@ -1,0 +1,90 @@
+<app-log-out></app-log-out>
+
+<div class="meni">
+    <ul class="menu-list">
+        <li><a (click)="chosen(0)">Профил</a></li>
+        <li><a (click)="chosen(1)">Заказивања</a></li>
+        <li><a (click)="chosen(2)">Одржавања</a></li>
+        <li><a (click)="chosen(3)">Статистика</a></li>
+    </ul>
+</div>
+
+<div class="zakazivanja">
+    <div class = "naslov">Заказивања</div>
+    <table>
+        <tr>
+            <th>Фирма</th>
+            <th>Површина</th>
+            <th>Почетак</th>
+            <th>Крај рада</th>
+            <th>Тип баште</th>
+            <th>Водене површине</th>
+            <th>Зелена површина</th>
+            <th>Седење</th>
+            <th>Коментар</th>
+            <th>Акције</th>
+        </tr>
+        <tr *ngFor="let appointment of appointments; let i = index">
+            <td>{{appointment.firm}}</td>
+            <td>{{appointment.squareFootage}} m²</td>
+            <td class="date-time">{{appointment.startDate | date: 'dd.MM.yyyy, HH:mm:ss'}}</td>
+            <td><input type = "datetime-local" [(ngModel)] = "endDate"></td>
+            <td *ngIf="appointment.privatePublicGarden == 1">Приватна</td>
+            <td *ngIf="appointment.privatePublicGarden == 1">{{appointment.poolFootage}}</td>
+            <td *ngIf="appointment.privatePublicGarden == 1">{{appointment.greenFootage}}</td>
+            <td *ngIf="appointment.privatePublicGarden == 1">{{appointment.sittingFootage}}</td>
+            <td *ngIf="appointment.privatePublicGarden == 2">Башта ресторана</td>
+            <td *ngIf="appointment.privatePublicGarden == 2">{{appointment.fountainFootage}}</td>
+            <td *ngIf="appointment.privatePublicGarden == 2">{{appointment.greenFootage}}</td>
+            <td *ngIf="appointment.privatePublicGarden == 2">{{appointment.sittingNumber}}</td>
+            <td><input type="text" [(ngModel)]="comments[i]" placeholder="Додајте коментар"></td>
+            <td>
+                <button (click)="accept(appointment, i)" *ngIf="!decorater.blocked">Потврди</button>
+                <button (click)="deny(appointment, i)" *ngIf="!decorater.blocked">Одбиј</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<br>
+
+<div class = "odrzavanje">
+    <div class = "naslov">Послови</div>
+    <table>
+        <tr>
+            <th>Почетак рада</th>
+            <th>Површина</th>
+            <th>Kraj rada</th>
+            <th>Акција</th>
+        </tr>
+        <tr *ngFor="let obligation of obligations; let i = index">
+            <td>{{obligation.startDate | date: 'dd.MM.yyyy, HH:mm:ss'}}</td>
+            <td>{{obligation.squareFootage}}</td>
+            <td>{{obligation.endDate | date: 'dd.MM.yyyy, HH:mm:ss'}}</td>
+            <td><button (click)="finishJob(obligation)">Заврши посао</button></td>
+        </tr>
+    </table>
+</div>
+
+<br>
+
+<div class = "zavrseniPoslovi">
+    <div class = "naslov">Завршени послови</div>
+    <table>
+        <tr>
+            <th>Крај рада</th>
+            <th>Власник</th>
+            <th>Додај слику</th>
+            <th>Акција</th>
+        </tr>
+        <tr *ngFor="let finishedJob of finishedJobs; let i = index">
+            <td>{{finishedJob.endDate | date: 'dd.MM.yyyy, HH:mm:ss'}}</td>
+            <td>{{finishedJob.owner}}</td>
+            <td>
+                <input type="file" accept="image/*" (change)="addedPhoto($event, i)" multiple>
+            </td>
+            <td><button (click)="savePhotos(i)">Сачувај слике</button></td>
+        </tr>
+    </table>
+</div>
