@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "66c899caf038a80ca4353b5e"
+  },
+  "username": "dragan",
+  "password": "Esbh234\"",
+  "firstname": "Dragan",
+  "gender": 1,
+  "address": "Bregalnicka 45/22",
+  "phoneNumber": "0660414765",
+  "email": "dragan.nik03@gmail.com",
+  "picture": "",
+  "creditCardNumber": {
+    "$numberLong": "0"
+  },
+  "type": 1,
+  "activated": true,
+  "lastname": "Nikolic"
+}]

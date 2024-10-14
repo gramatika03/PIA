@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "66d7304e6083a2eeed5cec0b"
+  },
+  "name": "Botanika",
+  "address": "Deligradska 9",
+  "services": "Gradnja bazena,Sadnja drveca,Bonsai",
+  "prices": "120,200,205",
+  "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.9842127376082!2d20.46258317576347!3d44.801510377410494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a700982e33a59%3A0xee3046651aea30a7!2z0JTQtdC70LjQs9GA0LDQtNGB0LrQsCA5LCDQkdC10L7Qs9GA0LDQtCAxMTAwMA!5e0!3m2!1ssr!2srs!4v1725387343953!5m2!1ssr!2srs",
+  "contact": "vojin",
+  "startPause": {
+    "$date": "2024-06-15T22:00:00.000Z"
+  },
+  "endPause": {
+    "$date": "2024-07-31T22:00:00.000Z"
+  },
+  "ratings": 4,
+  "numberOfRates": 1
+},
+{
+  "_id": {
+    "$oid": "66daffdc3fdd724187ed188f"
+  },
+  "name": "Migo",
+  "address": "Gospodara Jovanova 61",
+  "services": "Dizajn,Sadjenje,Poplocavanje",
+  "prices": "120,250,300",
+  "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.0465476962067!2d20.45911462725203!3d44.82061634710561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7ab4ee3910e5%3A0x77afd1e69b02dfb6!2z0JPQvtGB0L_QvtC00LDRgCDQiNC-0LLQsNC90L7QstCwIDYxLTQ1LCDQkdC10L7Qs9GA0LDQtA!5e0!3m2!1ssr!2srs!4v1725628565506!5m2!1ssr!2srs",
+  "contact": "marta",
+  "startPause": {
+    "$date": "2024-10-30T14:12:00.000Z"
+  },
+  "endPause": {
+    "$date": "2024-11-10T14:12:00.000Z"
+  },
+  "ratings": 12,
+  "numberOfRates": 4
+},
+{
+  "_id": {
+    "$oid": "66db01833fdd724187ed18b5"
+  },
+  "name": "Carska basta",
+  "address": "Zorza Klemansoa 22",
+  "services": "Namestaj,Vodene povrsine",
+  "prices": "200,300",
+  "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3795.7807697294497!2d20.46898528030869!3d44.82291425894922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7ab4ee3910e5%3A0x77afd1e69b02dfb6!2z0JPQvtGB0L_QvtC00LDRgCDQiNC-0LLQsNC90L7QstCwIDYxLTQ1LCDQkdC10L7Qs9GA0LDQtA!5e0!3m2!1ssr!2srs!4v1725628705391!5m2!1ssr!2srs",
+  "contact": "milan",
+  "startPause": {
+    "$date": "2024-02-15T14:19:00.000Z"
+  },
+  "endPause": {
+    "$date": "2024-03-05T14:19:00.000Z"
+  },
+  "ratings": 0,
+  "numberOfRates": 0
+},
+{
+  "_id": {
+    "$oid": "66dccd3fc609e6cc6534f800"
+  },
+  "name": "Domel",
+  "address": "Prominska 2",
+  "services": "Pranje baste,Kosenje trave",
+  "prices": "320,200",
+  "location": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11301.86410721378!2d20.507209754239163!3d44.80609380860685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ssr!2srs!4v1725746457409!5m2!1ssr!2srs",
+  "contact": "petar",
+  "startPause": {
+    "$date": "2024-11-19T23:01:00.000Z"
+  },
+  "endPause": {
+    "$date": "2024-12-09T23:01:00.000Z"
+  },
+  "ratings": 0,
+  "numberOfRates": 0
+}]

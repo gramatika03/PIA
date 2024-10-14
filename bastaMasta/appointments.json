@@ -1,0 +1,50 @@
+[{
+  "_id": {
+    "$oid": "66dd0c2ab1c5a33df33e3fd7"
+  },
+  "firm": "Migo",
+  "startDate": {
+    "$date": "2024-10-07T02:29:00.000Z"
+  },
+  "squareFootage": 15,
+  "privatePublicGarden": 1,
+  "poolFootage": 15,
+  "greenFootage": 0,
+  "sittingFootage": 0,
+  "fountainFootage": 0,
+  "sittingNumber": 0,
+  "description": "",
+  "services": "Poplocavanje",
+  "accepted": false,
+  "owner": "sladjana",
+  "made": {
+    "$date": "2024-09-08T02:30:02.723Z"
+  },
+  "poolNumber": 0,
+  "fountainNumber": 0
+},
+{
+  "_id": {
+    "$oid": "66dd0c88b1c5a33df33e3feb"
+  },
+  "firm": "Carska basta",
+  "startDate": {
+    "$date": "2024-06-04T02:31:00.000Z"
+  },
+  "squareFootage": 51,
+  "privatePublicGarden": 2,
+  "poolFootage": 0,
+  "greenFootage": 17,
+  "sittingFootage": 0,
+  "fountainFootage": 34,
+  "sittingNumber": 4,
+  "description": "",
+  "services": "Vodene povrsine",
+  "accepted": false,
+  "owner": "sladjana",
+  "made": {
+    "$date": "2024-09-08T02:31:36.476Z"
+  },
+  "poolNumber": 2,
+  "fountainNumber": 0
+}]

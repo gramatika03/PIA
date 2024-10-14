@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "66dda4e27b02ddf1fe865d09"
+  },
+  "username": "vojin",
+  "firm": "Botanika",
+  "startDate": {
+    "$date": "2024-10-12T02:24:00.000Z"
+  },
+  "squareFootage": 15,
+  "privatePublicGarden": 2,
+  "poolFootage": 0,
+  "greenFootage": 5,
+  "sittingFootage": 5,
+  "fountainFootage": 5,
+  "sittingNumber": 12,
+  "description": "Opasno drvece",
+  "services": "Sadnja drveca",
+  "accepted": false,
+  "endDate": {
+    "$date": "2024-11-08T13:21:36.657Z"
+  },
+  "owner": "sladjana",
+  "made": {
+    "$date": "2024-11-08T02:24:54.289Z"
+  },
+  "comment": "",
+  "poolNumber": 0,
+  "fountainNumber": 0
+}]
